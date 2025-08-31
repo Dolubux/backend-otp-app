@@ -41,7 +41,38 @@ exports.AppModule = AppModule = __decorate([
                 imports: [config_1.ConfigModule],
                 useFactory: (configService) => {
                     const config = configService.get('database');
-                    return config;
+                    if (!config) {
+                        throw new Error('Configuration de la base de données introuvable');
+                    }
+                    const dbConfig = {
+                        ...config,
+                        logging: process.env.NODE_ENV === 'production'
+                            ? ['error', 'warn']
+                            : ['error', 'warn', 'query'],
+                        cache: false,
+                        synchronize: process.env.NODE_ENV !== 'production',
+                    };
+                    const logConfig = {
+                        type: dbConfig.type,
+                        database: dbConfig.database,
+                        entities: dbConfig.entities ? 'chargées' : 'non spécifiées',
+                        synchronize: dbConfig.synchronize,
+                        logging: dbConfig.logging,
+                    };
+                    if ('host' in dbConfig)
+                        logConfig.host = dbConfig.host;
+                    if ('port' in dbConfig)
+                        logConfig.port = dbConfig.port;
+                    if ('ssl' in dbConfig)
+                        logConfig.ssl = dbConfig.ssl;
+                    if (dbConfig.extra) {
+                        logConfig.extra = {
+                            ...dbConfig.extra,
+                            password: '***',
+                        };
+                    }
+                    console.log('Configuration de la base de données:', logConfig);
+                    return dbConfig;
                 },
                 inject: [config_1.ConfigService],
             }),
