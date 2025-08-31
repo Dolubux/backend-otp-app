@@ -19,7 +19,7 @@ async function bootstrap() {
             .setTitle('OTP API')
             .setDescription('API pour la gestion des produits, commandes et statistiques')
             .setVersion('1.0')
-            .addServer('api_otp.babynounu.com', 'Production')
+            .addServer('otp.babynounu.com', 'Production')
             .addTag('products', 'Gestion des produits')
             .addTag('orders', 'Gestion des commandes')
             .addTag('categories', 'Gestion des catégories')
