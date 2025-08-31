@@ -9,12 +9,7 @@ async function bootstrap() {
         const app = await core_1.NestFactory.create(app_module_1.AppModule, {
             logger: ['error', 'warn', 'log', 'debug'],
         });
-        app.enableCors({
-            origin: ['https://oeil-du-topo-consulting.com', 'https://www.oeil-du-topo-consulting.com'],
-            methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-            credentials: true,
-            allowedHeaders: 'Content-Type, Accept, Authorization',
-        });
+        app.enableCors();
         app.useGlobalPipes(new common_1.ValidationPipe({
             whitelist: true,
             forbidNonWhitelisted: true,
@@ -24,7 +19,7 @@ async function bootstrap() {
             .setTitle('OTP API')
             .setDescription('API pour la gestion des produits, commandes et statistiques')
             .setVersion('1.0')
-            .addServer('https://api.oeil-du-topo-consulting.com', 'Production')
+            .addServer('api_otp.babynounu.com', 'Production')
             .addTag('products', 'Gestion des produits')
             .addTag('orders', 'Gestion des commandes')
             .addTag('categories', 'Gestion des catégories')
@@ -34,7 +29,7 @@ async function bootstrap() {
             .build();
         const document = swagger_1.SwaggerModule.createDocument(app, config);
         swagger_1.SwaggerModule.setup('api', app, document);
-        const port = process.env.PORT || 3000;
+        const port = process.env.PORT || 3001;
         await app.listen(port, '0.0.0.0');
         console.log(`Application is running on: http://localhost:${port}`);
     }
@@ -44,3 +39,4 @@ async function bootstrap() {
     }
 }
 bootstrap();
+//# sourceMappingURL=main.js.map
