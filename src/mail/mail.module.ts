@@ -12,15 +12,13 @@ import { ConfigModule } from '@nestjs/config';
         transport: {
           host: config.get('MAIL_HOST'),
           port: parseInt(config.get('MAIL_PORT') || '587', 10),
-          secure: false, // true pour le port 465, false pour les autres ports
-          requireTLS: true,
-          tls: {
-            // Ne pas échouer sur des certificats invalides
-            rejectUnauthorized: false
-          },
+          secure: false, // true pour le port 465, false pour 587
           auth: {
             user: config.get('MAIL_USER'),
             pass: config.get('MAIL_PASSWORD'),
+          },
+          tls: {
+            rejectUnauthorized: false,
           },
           debug: config.get('NODE_ENV') === 'development',
         },
