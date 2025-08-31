@@ -11,9 +11,9 @@ export default registerAs('database', (): TypeOrmModuleOptions => ({
   autoLoadEntities: true,
   synchronize: true,
   logging: process.env.NODE_ENV !== 'development',
-  ssl: false, // <-- désactiver SSL
   extra: {
     charset: 'utf8mb4_unicode_ci',
+    ssl: undefined, // 👈 très important
   },
   dateStrings: false,
 } as TypeOrmModuleOptions));
