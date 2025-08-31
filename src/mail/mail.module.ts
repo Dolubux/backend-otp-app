@@ -11,11 +11,18 @@ import { ConfigModule } from '@nestjs/config';
       useFactory: async (config: ConfigService) => ({
         transport: {
           host: config.get('MAIL_HOST'),
-          secure: false,
+          port: parseInt(config.get('MAIL_PORT') || '587', 10),
+          secure: false, // true pour le port 465, false pour les autres ports
+          requireTLS: true,
+          tls: {
+            // Ne pas échouer sur des certificats invalides
+            rejectUnauthorized: false
+          },
           auth: {
             user: config.get('MAIL_USER'),
             pass: config.get('MAIL_PASSWORD'),
           },
+          debug: config.get('NODE_ENV') === 'development',
         },
         defaults: {
           from: `"No Reply" <${config.get('MAIL_FROM')}>`,
