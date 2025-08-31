@@ -29,7 +29,7 @@ async function bootstrap() {
         .addTag('media', 'Gestion des médias et images')
         .build();
     const document = swagger_1.SwaggerModule.createDocument(app, config);
-    swagger_1.SwaggerModule.setup('', app, document);
+    swagger_1.SwaggerModule.setup('api', app, document);
     await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
