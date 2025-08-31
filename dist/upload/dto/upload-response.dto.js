@@ -9,4 +9,3 @@ class MultipleUploadResponseDto {
     urls;
 }
 exports.MultipleUploadResponseDto = MultipleUploadResponseDto;
-//# sourceMappingURL=upload-response.dto.js.map

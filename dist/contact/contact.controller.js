@@ -37,4 +37,3 @@ exports.ContactController = ContactController = __decorate([
     (0, common_1.Controller)('contact'),
     __metadata("design:paramtypes", [contact_service_1.ContactService])
 ], ContactController);
-//# sourceMappingURL=contact.controller.js.map

@@ -12,4 +12,3 @@ class StatisticsDto {
     topProducts;
 }
 exports.StatisticsDto = StatisticsDto;
-//# sourceMappingURL=statistics.dto.js.map

@@ -64,4 +64,3 @@ __decorate([
     (0, class_transformer_1.Type)(() => create_media_dto_1.CreateMediaDto),
     __metadata("design:type", Array)
 ], CreateProductDto.prototype, "medias", void 0);
-//# sourceMappingURL=create-product.dto.js.map

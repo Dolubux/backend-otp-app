@@ -19,4 +19,3 @@ __decorate([
     (0, class_validator_1.IsEnum)(['pending', 'processing', 'shipped', 'delivered', 'cancelled']),
     __metadata("design:type", String)
 ], UpdateOrderStatusDto.prototype, "status", void 0);
-//# sourceMappingURL=update-order-status.dto.js.map

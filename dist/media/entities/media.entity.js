@@ -84,9 +84,8 @@ __decorate([
 ], Media.prototype, "updatedAt", void 0);
 __decorate([
     (0, typeorm_1.DeleteDateColumn)({ type: 'datetime', nullable: true }),
-    __metadata("design:type", Object)
+    __metadata("design:type", Date)
 ], Media.prototype, "deletedAt", void 0);
 exports.Media = Media = __decorate([
     (0, typeorm_1.Entity)('medias')
 ], Media);
-//# sourceMappingURL=media.entity.js.map

@@ -44,4 +44,3 @@ __decorate([
     (0, class_validator_1.IsBoolean)(),
     __metadata("design:type", Boolean)
 ], CreateCategoryDto.prototype, "isActive", void 0);
-//# sourceMappingURL=create-category.dto.js.map

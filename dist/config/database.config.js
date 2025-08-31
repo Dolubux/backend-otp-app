@@ -20,4 +20,3 @@ exports.default = (0, config_1.registerAs)('database', () => ({
     retryAttempts: 5,
     retryDelay: 3000,
 }));
-//# sourceMappingURL=database.config.js.map

@@ -32,4 +32,3 @@ __decorate([
     (0, class_validator_1.IsArray)(),
     __metadata("design:type", Array)
 ], UpdateProductDto.prototype, "mediasToDelete", void 0);
-//# sourceMappingURL=update-product.dto.js.map

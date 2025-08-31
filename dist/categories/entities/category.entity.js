@@ -61,9 +61,8 @@ __decorate([
 __decorate([
     (0, swagger_1.ApiProperty)({ description: 'Date de suppression', required: false }),
     (0, typeorm_1.DeleteDateColumn)({ type: 'datetime', nullable: true }),
-    __metadata("design:type", Object)
+    __metadata("design:type", Date)
 ], Category.prototype, "deletedAt", void 0);
 exports.Category = Category = __decorate([
     (0, typeorm_1.Entity)('categories')
 ], Category);
-//# sourceMappingURL=category.entity.js.map

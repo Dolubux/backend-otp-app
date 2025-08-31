@@ -46,4 +46,3 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], UpdateOrderItemDto.prototype, "id", void 0);
-//# sourceMappingURL=order-item.dto.js.map

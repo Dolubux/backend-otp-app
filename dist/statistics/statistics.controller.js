@@ -41,4 +41,3 @@ exports.StatisticsController = StatisticsController = __decorate([
     (0, common_1.Controller)('statistics'),
     __metadata("design:paramtypes", [statistics_service_1.StatisticsService])
 ], StatisticsController);
-//# sourceMappingURL=statistics.controller.js.map

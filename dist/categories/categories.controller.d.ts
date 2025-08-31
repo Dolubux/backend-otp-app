@@ -11,6 +11,6 @@ export declare class CategoriesController {
     update(id: string, updateCategoryDto: UpdateCategoryDto): Promise<Category>;
     remove(id: string): Promise<void>;
     toggleStatus(id: string): Promise<Category>;
-    findByName(name: string): Promise<Category | null>;
+    findByName(name: string): Promise<Category>;
     getActiveCount(): Promise<number>;
 }

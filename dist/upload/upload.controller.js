@@ -93,4 +93,3 @@ exports.UploadController = UploadController = __decorate([
     (0, common_1.Controller)('upload'),
     __metadata("design:paramtypes", [upload_service_1.UploadService])
 ], UploadController);
-//# sourceMappingURL=upload.controller.js.map

@@ -16,6 +16,7 @@ async function bootstrap() {
         .setTitle('OTP API')
         .setDescription('API pour la gestion des produits, commandes et statistiques')
         .setVersion('1.0')
+        .addServer('https://api.oeil-du-topo-consulting.com', 'Local environment')
         .addTag('products', 'Gestion des produits')
         .addTag('orders', 'Gestion des commandes')
         .addTag('categories', 'Gestion des catégories')
@@ -28,4 +29,3 @@ async function bootstrap() {
     await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
-//# sourceMappingURL=main.js.map

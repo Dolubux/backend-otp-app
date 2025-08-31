@@ -38,4 +38,3 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
 ], ContactDto.prototype, "message", void 0);
-//# sourceMappingURL=contact.dto.js.map

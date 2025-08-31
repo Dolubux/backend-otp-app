@@ -136,4 +136,3 @@ exports.StatisticsService = StatisticsService = __decorate([
         typeorm_2.Repository,
         users_service_1.UsersService])
 ], StatisticsService);
-//# sourceMappingURL=statistics.service.js.map

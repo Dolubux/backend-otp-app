@@ -146,4 +146,3 @@ exports.MediaController = MediaController = __decorate([
     (0, common_1.Controller)('media'),
     __metadata("design:paramtypes", [media_service_1.MediaService])
 ], MediaController);
-//# sourceMappingURL=media.controller.js.map

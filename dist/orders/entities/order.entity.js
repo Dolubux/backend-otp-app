@@ -67,9 +67,8 @@ __decorate([
 ], Order.prototype, "updatedAt", void 0);
 __decorate([
     (0, typeorm_1.DeleteDateColumn)({ type: 'datetime', nullable: true }),
-    __metadata("design:type", Object)
+    __metadata("design:type", Date)
 ], Order.prototype, "deletedAt", void 0);
 exports.Order = Order = __decorate([
     (0, typeorm_1.Entity)('orders')
 ], Order);
-//# sourceMappingURL=order.entity.js.map

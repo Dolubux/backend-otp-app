@@ -44,4 +44,3 @@ __decorate([
     (0, class_validator_1.Min)(0),
     __metadata("design:type", Number)
 ], CreateOrderDto.prototype, "total", void 0);
-//# sourceMappingURL=create-order.dto.js.map

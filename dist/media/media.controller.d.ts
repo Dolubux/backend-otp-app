@@ -8,9 +8,9 @@ export declare class MediaController {
     uploadFiles(files: Express.Multer.File[], productId: string): Promise<import("./entities/media.entity").Media[]>;
     findAll(): Promise<import("./entities/media.entity").Media[]>;
     findByProduct(productId: string): Promise<import("./entities/media.entity").Media[]>;
-    findOne(id: string): Promise<import("./entities/media.entity").Media | null>;
-    update(id: string, updateMediaDto: UpdateMediaDto): Promise<import("./entities/media.entity").Media | null>;
-    setMainImage(id: string, productId: string): Promise<import("./entities/media.entity").Media | null>;
+    findOne(id: string): Promise<import("./entities/media.entity").Media>;
+    update(id: string, updateMediaDto: UpdateMediaDto): Promise<import("./entities/media.entity").Media>;
+    setMainImage(id: string, productId: string): Promise<import("./entities/media.entity").Media>;
     remove(id: string): Promise<{
         message: string;
     }>;

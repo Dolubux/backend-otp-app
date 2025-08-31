@@ -22,4 +22,3 @@ exports.ContactModule = ContactModule = __decorate([
         exports: [contact_service_1.ContactService],
     })
 ], ContactModule);
-//# sourceMappingURL=contact.module.js.map

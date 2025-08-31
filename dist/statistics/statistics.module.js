@@ -28,4 +28,3 @@ exports.StatisticsModule = StatisticsModule = __decorate([
         exports: [statistics_service_1.StatisticsService],
     })
 ], StatisticsModule);
-//# sourceMappingURL=statistics.module.js.map
