@@ -14,10 +14,19 @@ import { MediaModule } from './media/media.module';
 import { ContactModule } from './contact/contact.module';
 import { MailModule } from './mail/mail.module';
 import databaseConfig from './config/database.config';
-
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
     imports: [
+      ServeStaticModule.forRoot({
+        rootPath: join(__dirname, '..', '..', 'public'), // Chemin vers le dossier public
+        serveRoot: '/public', // URL de base pour accéder aux fichiers
+        serveStaticOptions: {
+          index: false, // Ne pas servir d'index.html par défaut
+          redirect: false, // Ne pas rediriger
+        },
+      }),
       ConfigModule.forRoot({
         isGlobal: true,
         load: [databaseConfig],
