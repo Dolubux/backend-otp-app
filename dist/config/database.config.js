@@ -4,7 +4,7 @@ const config_1 = require("@nestjs/config");
 exports.default = (0, config_1.registerAs)('database', () => ({
     type: 'mysql',
     host: process.env.DB_HOST,
-    port: parseInt(process.env.DB_PORT, 10),
+    port: parseInt(process.env.DB_PORT?.toString() || '3306'),
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
@@ -13,3 +13,4 @@ exports.default = (0, config_1.registerAs)('database', () => ({
     ssl: false,
     logging: true,
 }));
+//# sourceMappingURL=database.config.js.map
