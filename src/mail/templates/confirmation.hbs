@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation d'email</title>
+</head>
+<body>
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2>Bienvenue, {{name}} !</h2>
+        <p>Merci de vous être inscrit sur notre plateforme. Pour activer votre compte, veuillez cliquer sur le lien ci-dessous :</p>
+        <p>
+            <a href="{{url}}" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">
+                Confirmer mon email
+            </a>
+        </p>
+        <p>Si le bouton ne fonctionne pas, copiez et collez ce lien dans votre navigateur :</p>
+        <p>{{url}}</p>
+        <p>À bientôt !</p>
+        <p>L'équipe de support</p>
+    </div>
+</body>
+</html>
