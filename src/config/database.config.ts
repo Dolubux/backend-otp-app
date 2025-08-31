@@ -9,11 +9,9 @@ export default registerAs('database', (): TypeOrmModuleOptions => ({
   password: process.env.DB_PASSWORD || '',
   database: process.env.DB_DATABASE || 'db_otp',
   autoLoadEntities: true,
-  synchronize: process.env.NODE_ENV !== 'production', // Désactivé en production
+  synchronize: true,
   logging: process.env.NODE_ENV !== 'development',
-  ssl: process.env.NODE_ENV === 'production' ? {
-    rejectUnauthorized: false
-  } : false,
+  ssl: false, // <-- désactiver SSL
   extra: {
     charset: 'utf8mb4_unicode_ci',
   },
