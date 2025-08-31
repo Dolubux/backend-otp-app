@@ -44,7 +44,7 @@ import databaseConfig from './config/database.config';
       StatisticsModule,
       UploadModule,
     ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
