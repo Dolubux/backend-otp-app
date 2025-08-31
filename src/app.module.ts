@@ -27,53 +27,9 @@ import databaseConfig from './config/database.config';
         imports: [ConfigModule],
         useFactory: (configService: ConfigService) => {
           const config = configService.get('database');
-          
-          // Vérification de la configuration
-          if (!config) {
-            throw new Error('Configuration de la base de données introuvable');
-          }
-          
-          // Configuration de base avec typage étendu
-          const dbConfig: TypeOrmModuleOptions & { 
-            host?: string; 
-            port?: number; 
-            ssl?: boolean | any;
-            extra?: any;
-          } = {
+          return {
             ...config,
-            // Activation des logs en fonction de l'environnement
-            logging: process.env.NODE_ENV === 'production' 
-              ? ['error', 'warn'] 
-              : ['error', 'warn', 'query'],
-            // Désactivation du cache pour le débogage
-            cache: false,
-            // Désactivation de la synchronisation automatique en production
-            synchronize: process.env.NODE_ENV !== 'production',
-          };
-          
-          // Log de la configuration (sans informations sensibles)
-          const logConfig: Record<string, any> = {
-            type: dbConfig.type,
-            database: dbConfig.database,
-            entities: dbConfig.entities ? 'chargées' : 'non spécifiées',
-            synchronize: dbConfig.synchronize,
-            logging: dbConfig.logging,
-          };
-          
-          // Ajout des propriétés optionnelles si elles existent
-          if ('host' in dbConfig) logConfig.host = dbConfig.host;
-          if ('port' in dbConfig) logConfig.port = dbConfig.port;
-          if ('ssl' in dbConfig) logConfig.ssl = dbConfig.ssl;
-          if (dbConfig.extra) {
-            logConfig.extra = {
-              ...dbConfig.extra,
-              password: '***', // Ne pas logger le mot de passe
-            };
-          }
-          
-          console.log('Configuration de la base de données:', logConfig);
-          
-          return dbConfig;
+          } as TypeOrmModuleOptions;
         },
         inject: [ConfigService],
       }),
