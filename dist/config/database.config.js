@@ -13,4 +13,3 @@ exports.default = (0, config_1.registerAs)('database', () => ({
     ssl: false,
     logging: true,
 }));
-//# sourceMappingURL=database.config.js.map
