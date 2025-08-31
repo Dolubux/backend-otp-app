@@ -27,7 +27,17 @@ import databaseConfig from './config/database.config';
         imports: [ConfigModule],
         useFactory: (configService: ConfigService) => {
           const config = configService.get('database');
-          return config as TypeOrmModuleOptions;
+          console.log('Database configuration:', {
+            host: config.host,
+            port: config.port,
+            username: config.username,
+            database: config.database,
+            ssl: config.ssl
+          });
+          return {
+            ...config,
+            logging: true, // Activer les logs SQL
+          } as TypeOrmModuleOptions;
         },
         inject: [ConfigService],
       }),
